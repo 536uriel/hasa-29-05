@@ -1,0 +1,12 @@
+
+.flexItems{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Item{
+    max-width: 100px;
+    max-height: 150px;
+}

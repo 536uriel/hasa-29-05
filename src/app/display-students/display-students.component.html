@@ -1,0 +1,26 @@
+<div class="flexItems">
+<canvas class="item" [id]='"c" + i' data-toggle="modal" [attr.data-target]='"#s" + i' *ngFor="let i of arrStudents" ></canvas>
+</div>
+<img id="Portrait" src="../../assets/imges/Portrait Frame (2).png" style="display:none;">
+
+  <!-- Modal -->
+  <div class="modal fade" *ngFor="let i of arrStudents" [id]='"s" + i' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        
+        <div class="modal-body">
+        <input type="file" [id]='"f" + i' (change)="readURL($event)" style="display:none;">
+        <label [for]='"f" + i'><img src="../../assets/imges/upload image.png" width="30"></label>
+        <img [id]='"i" +  i' *ngIf="imageSrc[i]" [src]="imageSrc[i]" [width]="RHW[i]" [height]="RHW[i]">
+        <input type="range" [(ngModel)]="RHW[i]" class="slider" min="0" max="100" value="50">
+        <input type="range" [(ngModel)]="RGS[i]" class="slider" min="0" max="100" value="50">
+        <input type="range" [(ngModel)]="RR[i]" class="slider" min="0" max="100" value="50">
+        <input type="text" [(ngModel)]="name[i]">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)='drowImg("c" + i)' >Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

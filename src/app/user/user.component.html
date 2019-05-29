@@ -1,0 +1,35 @@
+<div class="pageContainer" >
+
+    <div class="item1">
+    <app-inputs-num-for-img (outStudents)="setStudentsArrey($event)" (outTeachers)="setTechersArrey($event)"></app-inputs-num-for-img>
+    <br>
+    <button (click)="auth.logout()">log out</button>
+    </div>
+
+    <div class="background">
+    <div class="item2">
+    <app-display-students [arrStudents]="studentsArr" [imageSrc]="imgS" [RHW]="range" [RGS]="range2" [RR]="range3" [name]="stuName"></app-display-students>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="item3">
+    <app-display-teachers [arrTeachers]="teachersArr"></app-display-teachers>
+    </div>
+  </div>
+
+    </div>
+    
+   
+  
+
+   <div *ngIf="false">
+    <canvas id="mainCanvas" height="400" width="400" style="border: 1px solid black;"></canvas>
+    <button (click)="makeCanvasToImg()">make memory</button>
+    <br><br>
+    <input type="file" (change)="readURL($event)">
+    <br>
+    <button (click)="addimg()">add img</button>
+  </div>
+
